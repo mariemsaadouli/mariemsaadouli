@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?lines=>+embedded+systems+%26+iot+graduate.;>+building+connected+devices.&font=Fira+Code&size=20&color=A78BFA&background=0D1117&center=true&vCenter=true&width=700&height=50&pause=1000" />
+  <img src="https://readme-typing-svg.demolab.com?lines=>+embedded+systems+%26+iot+graduate.;>+building+connected+devices.&font=Fira+Code&size=20&color=A78BFA&center=true&vCenter=true&width=700&height=50&pause=1000" />
 </p>
 
 ### About
