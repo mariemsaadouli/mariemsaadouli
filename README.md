@@ -22,7 +22,4 @@ I graduated in Embedded Systems and IoT from ISI Mahdia. I enjoy working with mi
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 
 ### Contact
-
-Open to internships, collaborations and embedded/IoT projects. Feel free to reach out.
-
 <a href="mailto:mariem.saadouli@ieee.org"><img src="https://img.shields.io/badge/Email-mariem.saadouli%40ieee.org-00629B?style=flat-square&logo=ieee&logoColor=white" /></a>
