@@ -166,3 +166,32 @@ def panel(p, w, h, orb=(760, 80, 220)):
             f'<rect width="{w}" height="{h}" rx="22" fill="url(#{p}-grid)"/>'
             f'<circle cx="{ox}" cy="{oy}" r="{r}" fill="url(#{p}-orb)" opacity=".7" clip-path="url(#{p}-clip)"/>'
             f'<rect x=".5" y=".5" width="{w-1}" height="{h-1}" rx="22" fill="none" stroke="url(#{p}-stroke)"/>')
+
+
+# ---- light theme ----------------------------------------------------------
+# Every dark-theme colour is swapped for its light counterpart. The chip body
+# (#110D22) and pure white (#FFFFFF) are left as they are on purpose.
+LIGHT_MAP = {
+    BG0: "#FFFFFF", BG1: "#F3EFFF", CARD: "#FFFFFF", CARD2: "#F8F5FF",
+    LINE: "#DDD6FE", VIOLET: "#6D28D9", LILAC: "#7C3AED", PALE: "#4C1D95",
+    IVORY: "#1E1046", MUTED: "#6B6589", GREEN: "#16A34A",
+    "#0E0B1C": "#F5F3FF", "#211A42": "#EDE9FE", "#16112C": "#F5F3FF",
+    # heatmap levels (level 4 is PALE above → deepest violet)
+    "#1E1838": "#EDE9FE", "#3B2A7A": "#C4B5FD", "#5B3DC4": "#A78BFA", "#8B5CF6": "#7C3AED",
+}
+
+
+def to_light(svg):
+    import re
+    keys = sorted(LIGHT_MAP, key=len, reverse=True)
+    pat = re.compile("|".join(re.escape(k) for k in keys), re.I)
+    return pat.sub(lambda m: LIGHT_MAP[m.group(0).upper()], svg)
+
+
+def write_pair(folder, name, svg):
+    """Write name.svg (dark) and name-light.svg (light)."""
+    base = name[:-4]
+    for fname, data in ((name, svg), (f"{base}-light.svg", to_light(svg))):
+        with open(os.path.join(folder, fname), "w", encoding="utf-8") as f:
+            f.write(data)
+    print("wrote", name, "+ light", f"{len(svg)//1024} KB")

@@ -151,7 +151,7 @@ def draw(user, days, total, num):
 
 
 def section_number():
-    has_projects = os.path.exists(os.path.join(ROOT, "assets", "project-1.svg"))
+    has_projects = os.path.exists(os.path.join(ROOT, "assets", "projects-header.svg"))
     return "04" if has_projects else "03"
 
 
@@ -172,7 +172,7 @@ def placeholder(user):
 if __name__ == "__main__":
     user = sys.argv[1] if len(sys.argv) > 1 else "mariemsaadouli"
     if "--placeholder" in sys.argv:
-        open(OUT, "w", encoding="utf-8").write(placeholder(user))
+        write_pair(os.path.dirname(OUT), "heatmap.svg", placeholder(user))
         sys.exit(0)
     try:
         days, total = parse(fetch(user))
@@ -180,6 +180,5 @@ if __name__ == "__main__":
         print(f"heatmap: skipped ({e})")
         sys.exit(0)
     svg = draw(user, days, total, section_number())
-    with open(OUT, "w", encoding="utf-8") as f:
-        f.write(svg)
+    write_pair(os.path.dirname(OUT), "heatmap.svg", svg)
     print(f"heatmap: wrote {OUT} ({len(days)} days, {total} contributions)")

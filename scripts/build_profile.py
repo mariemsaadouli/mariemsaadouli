@@ -35,9 +35,7 @@ PROJECTS = []
 
 
 def write(name, svg):
-    with open(os.path.join(ASSETS, name), "w", encoding="utf-8") as f:
-        f.write(svg)
-    print("wrote", name, f"{len(svg)//1024} KB")
+    write_pair(ASSETS, name, svg)
 
 
 # ---------------------------------------------------------------- hero
@@ -110,7 +108,7 @@ def hero():
   <rect x="645" y="145" width="120" height="120" rx="12" fill="#110D22" stroke="{LILAC}" stroke-opacity=".7"/>
   <circle cx="659" cy="159" r="3" fill="none" stroke="{LILAC}" stroke-opacity=".7"/>
   <rect x="673" y="173" width="64" height="64" rx="7" fill="url(#{p}-die)"/>
-  <text x="{cx}" y="{cy+11}" text-anchor="middle" class="serif" font-size="32" fill="{IVORY}">MS</text>
+  <text x="{cx}" y="{cy+11}" text-anchor="middle" class="serif" font-size="32" fill="#FFFFFF">MS</text>
   <circle cx="752" cy="252" r="3" fill="{GREEN}" filter="url(#{p}-glow)" class="pulse"/>
   <text x="{cx}" y="384" text-anchor="middle" class="mono" font-size="9" fill="{MUTED}" letter-spacing="2">FIG. 01 · WHERE EVERY PROJECT STARTS</text>
 
@@ -165,7 +163,7 @@ def toolkit():
     svg += f"""<defs>{base_defs(p, W, H)}</defs>
 <style>{font_css('serif', 'serif-italic', 'mono')}{base_css()}</style>
 {panel(p, W, H)}<g transform="translate(0 24)">
-{section_header(p, '03' if PROJECTS else '02', 'TOOLKIT', 'The tools I ', 'reach for', '.', right='LANGUAGES · HARDWARE · TOOLS')}
+{section_header(p, '03', 'TOOLKIT', 'The tools I ', 'reach for', '.', right='LANGUAGES · HARDWARE · TOOLS')}
 
 {card(p, 40, 116, 400, 180)}
 <text x="66" y="148" class="mono" font-size="10" fill="{LILAC}" letter-spacing="2">01 · LANGUAGES</text>
@@ -196,8 +194,33 @@ def toolkit():
 
 
 # ---------------------------------------------------------------- projects
+def projects_placeholder():
+    """Visible 'coming soon' slot shown until PROJECTS is filled in."""
+    p, W, H = "mpp", 900, 330
+    slots = ""
+    for i, x in enumerate((40, 320, 600)):
+        slots += (f'<rect x="{x}" y="116" width="260" height="150" rx="16" fill="url(#{p}-card)" '
+                  f'stroke="{LILAC}" stroke-opacity=".35" stroke-dasharray="5 6"/>'
+                  f'<text x="{x+24}" y="148" class="mono" font-size="10" fill="{LILAC}" letter-spacing="2">0{i+1} · PROJECT SLOT</text>'
+                  f'<rect x="{x+24}" y="170" width="150" height="14" rx="4" fill="{LINE}" class="pulse"/>'
+                  f'<rect x="{x+24}" y="196" width="200" height="8" rx="4" fill="{LINE}" opacity=".7"/>'
+                  f'<rect x="{x+24}" y="212" width="170" height="8" rx="4" fill="{LINE}" opacity=".7"/>'
+                  f'<rect x="{x+24}" y="236" width="52" height="16" rx="8" fill="#211A42" stroke="{LINE}"/>'
+                  f'<rect x="{x+84}" y="236" width="52" height="16" rx="8" fill="#211A42" stroke="{LINE}"/>')
+    svg = svg_open(W, H, "Selected work: projects coming soon", p)
+    svg += f"""<defs>{base_defs(p, W, H)}</defs>
+<style>{font_css('serif', 'serif-italic', 'mono')}{base_css()}</style>
+{panel(p, W, H)}<g transform="translate(0 24)">
+{section_header(p, '02', 'SELECTED WORK', 'Hardware, not just ', 'homework', '.', right='COMING SOON')}
+{slots}
+</g></svg>
+"""
+    write("projects-header.svg", svg)
+
+
 def projects():
     if not PROJECTS:
+        projects_placeholder()
         return
     p0, W = "mpH", 900
     svg = svg_open(W, 140, "Selected work", p0)
