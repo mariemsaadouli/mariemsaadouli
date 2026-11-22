@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="90" viewBox="0 0 900 90" role="img" aria-label="Animated digital signal footer">
+  <title>Thanks for visiting</title>
+  <defs>
+    <linearGradient id="msf-fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#A78BFA" stop-opacity="0"/>
+      <stop offset="15%" stop-color="#A78BFA"/>
+      <stop offset="85%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#A78BFA" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="msf-glow" x="-10%" y="-100%" width="120%" height="300%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <style>
+    .sig  { fill:none; stroke:url(#msf-fade); stroke-width:2; stroke-opacity:.35; stroke-linejoin:round; }
+    .run  { fill:none; stroke:#C4B5FD; stroke-width:2.5; stroke-linejoin:round; stroke-linecap:round;
+             stroke-dasharray:90 1500; animation: msf-run 5s linear infinite; }
+    .txt  { font: 500 12px 'Fira Code', Consolas, 'Courier New', monospace; fill:#A78BFA; letter-spacing:3px; }
+    @keyframes msf-run { from { stroke-dashoffset:1590 } to { stroke-dashoffset:0 } }
+    @media (prefers-reduced-motion: reduce) { .run { animation:none; stroke-opacity:0 } }
+  </style>
+  <path class="sig" d="M0 50 V28 H30 V50 H60 V28 H90 V28 H120 V50 H150 V50 H180 V28 H210 V50 H240 V28 H270 V50 H300 V50 H330 V28 H360 V28 H390 V28 H420 V50 H450 V28 H480 V50 H510 V50 H540 V28 H570 V50 H600 V28 H630 V28 H660 V50 H690 V28 H720 V50 H750 V28 H780 V50 H810 V50 H840 V28 H870 V28 H900"/>
+  <path class="run" d="M0 50 V28 H30 V50 H60 V28 H90 V28 H120 V50 H150 V50 H180 V28 H210 V50 H240 V28 H270 V50 H300 V50 H330 V28 H360 V28 H390 V28 H420 V50 H450 V28 H480 V50 H510 V50 H540 V28 H570 V50 H600 V28 H630 V28 H660 V50 H690 V28 H720 V50 H750 V28 H780 V50 H810 V50 H840 V28 H870 V28 H900" filter="url(#msf-glow)"/>
+  <text x="450" y="80" text-anchor="middle" class="txt">THANKS FOR VISITING</text>
+</svg>
