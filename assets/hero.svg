@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="260" viewBox="0 0 900 260" role="img" aria-label="Mariem Saadouli, Embedded Systems and IoT Graduate">
+  <title>Mariem Saadouli: Embedded Systems &amp; IoT Graduate</title>
+  <defs>
+    <linearGradient id="msh-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B0A1A"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <radialGradient id="msh-orb" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="msh-line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#C4B5FD"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="msh-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#A78BFA" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+    <filter id="msh-glow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="2.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="msh-clip"><rect width="900" height="260" rx="24"/></clipPath>
+  </defs>
+  <style>
+    .trace { fill:none; stroke:#A78BFA; stroke-opacity:.45; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;
+             stroke-dasharray:400; animation: msh-draw 2.4s ease-out both; }
+    .pad { fill:#0B0A1A; stroke:#C4B5FD; stroke-width:2; }
+    .led { animation: msh-blink 1.6s ease-in-out infinite; }
+    .name { font: 700 58px 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif; fill:#F5F3FF; letter-spacing:.5px; }
+    .role { font: 500 22px 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif; fill:#DDD6FE; }
+    .mono { font: 500 13px 'Fira Code', Consolas, 'Courier New', monospace; fill:#A78BFA; letter-spacing:2px; }
+    @keyframes msh-draw { from { stroke-dashoffset:400 } to { stroke-dashoffset:0 } }
+    @keyframes msh-blink { 0%,100% { opacity:1 } 50% { opacity:.25 } }
+    @media (prefers-reduced-motion: reduce) { .trace, .led { animation:none } }
+  </style>
+  <g clip-path="url(#msh-clip)">
+    <rect width="900" height="260" fill="url(#msh-bg)"/>
+    <rect width="900" height="260" fill="url(#msh-grid)"/>
+    <ellipse cx="450" cy="130" rx="260" ry="150" fill="url(#msh-orb)">
+      <animate attributeName="cx" values="300;600;300" dur="14s" repeatCount="indefinite"/>
+    </ellipse>
+  <g>
+    <path id="msh-pl0" class="trace" d="M0 58 H92 L122 88 H206"/>
+    <circle class="pad" cx="206" cy="88" r="4.5"/>
+    <circle r="3.2" fill="#E9D5FF" filter="url(#msh-glow)"><animateMotion dur="3.2s" begin="0s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#msh-pl0"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="3.2s" begin="0s" repeatCount="indefinite"/></circle>
+    <path id="msh-pl1" class="trace" d="M0 132 H54 L76 154 H178"/>
+    <circle class="pad" cx="178" cy="154" r="4.5"/>
+    <circle r="3.2" fill="#E9D5FF" filter="url(#msh-glow)"><animateMotion dur="3.2s" begin="1.1s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#msh-pl1"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="3.2s" begin="1.1s" repeatCount="indefinite"/></circle>
+    <path id="msh-pl2" class="trace" d="M0 214 H118 L150 182 H232"/>
+    <circle class="pad" cx="232" cy="182" r="4.5"/>
+    <circle r="3.2" fill="#E9D5FF" filter="url(#msh-glow)"><animateMotion dur="3.2s" begin="0.5s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#msh-pl2"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="3.2s" begin="0.5s" repeatCount="indefinite"/></circle>
+    <path id="msh-pl3" class="trace" d="M36 260 V236 L62 210 H96"/>
+    <circle class="pad" cx="96" cy="210" r="4.5"/>
+    <circle r="3.2" fill="#E9D5FF" filter="url(#msh-glow)"><animateMotion dur="3.2s" begin="1.7s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#msh-pl3"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="3.2s" begin="1.7s" repeatCount="indefinite"/></circle>
+  </g>
+  <g transform="translate(900 0) scale(-1 1)">
+    <path id="msh-pr0" class="trace" d="M0 58 H92 L122 88 H206"/>
+    <circle class="pad" cx="206" cy="88" r="4.5"/>
+    <circle r="3.2" fill="#E9D5FF" filter="url(#msh-glow)"><animateMotion dur="3.2s" begin="0s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#msh-pr0"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="3.2s" begin="0s" repeatCount="indefinite"/></circle>
+    <path id="msh-pr1" class="trace" d="M0 132 H54 L76 154 H178"/>
+    <circle class="pad" cx="178" cy="154" r="4.5"/>
+    <circle r="3.2" fill="#E9D5FF" filter="url(#msh-glow)"><animateMotion dur="3.2s" begin="1.1s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#msh-pr1"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="3.2s" begin="1.1s" repeatCount="indefinite"/></circle>
+    <path id="msh-pr2" class="trace" d="M0 214 H118 L150 182 H232"/>
+    <circle class="pad" cx="232" cy="182" r="4.5"/>
+    <circle r="3.2" fill="#E9D5FF" filter="url(#msh-glow)"><animateMotion dur="3.2s" begin="0.5s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#msh-pr2"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="3.2s" begin="0.5s" repeatCount="indefinite"/></circle>
+    <path id="msh-pr3" class="trace" d="M36 260 V236 L62 210 H96"/>
+    <circle class="pad" cx="96" cy="210" r="4.5"/>
+    <circle r="3.2" fill="#E9D5FF" filter="url(#msh-glow)"><animateMotion dur="3.2s" begin="1.7s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#msh-pr3"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="3.2s" begin="1.7s" repeatCount="indefinite"/></circle>
+  </g>
+    <circle class="led" cx="30" cy="26" r="4" fill="#4ADE80" filter="url(#msh-glow)"/>
+    <text x="42" y="30" class="mono" style="font-size:11px;fill:#86EFAC">PWR</text>
+    <text x="450" y="78" text-anchor="middle" class="mono">// FIRMWARE · SENSORS · CONNECTED DEVICES</text>
+    <text x="450" y="138" text-anchor="middle" class="name">Mariem Saadouli</text>
+    <text x="450" y="176" text-anchor="middle" class="role">Embedded Systems &amp; IoT Graduate</text>
+    <path id="msh-ul" d="M300 198 H600" stroke="url(#msh-line)" stroke-width="2.5" stroke-linecap="round"/>
+    <circle r="3.5" fill="#F5F3FF" filter="url(#msh-glow)">
+      <animateMotion dur="4s" repeatCount="indefinite" path="M300 198 H600 H300"/>
+    </circle>
+  </g>
+</svg>
